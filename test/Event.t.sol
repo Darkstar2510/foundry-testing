@@ -19,13 +19,6 @@ contract testEvent is Test {
 
     //testing single event
     function testEmitTransferEvent() public {
-        // function expectEmit(
-        //     bool checkTopic1,
-        //     bool checkTopic2,
-        //     bool checkTopic3,
-        //     bool checkData
-        // ) external;
-
         // 1. Tell Foundry which data to check
         // Check index 1, index 2 and data
         vm.expectEmit(true, true, false, true);
@@ -42,15 +35,15 @@ contract testEvent is Test {
         s_event.transfer(address(this), address(111), 222);
     }
 
-    //Test multiple events emmited by single functions
+    //Testing multiple events emmited by single functions
     function testEmitManyTransferEvents() public {
         address[] memory to = new address[](2);
-        to[0] = address(777);
-        to[1] = address(888);
+        to[0] = address(123);
+        to[1] = address(456);
 
         uint256[] memory amounts = new uint256[](2);
-        amounts[0] = 777;
-        amounts[1] = 888;
+        amounts[0] = 778;
+        amounts[1] = 450;
 
         for (uint256 i = 0; i < to.length; i++) {
             // 1. Tell Foundry which data to check
