@@ -55,4 +55,7 @@ contract testEvent is Test {
         // 3. Call the function that should emit the event
         s_event.transferMany(address(this), to, amounts);
     }
+
+    //EMIT 1 = Transfer(this, 0x123, 778)
+    //EMIT 2 = Transfer(this, 0x456, 450)
 }
