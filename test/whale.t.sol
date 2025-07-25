@@ -25,8 +25,10 @@ contract ForkTest is Test {
         //mint 1 million $$$ to alice
         deal(address(dai), alice, 1e6 * 1e18, true);
         //1e6 = 1 million
-
         // 1e18 = because DAI uses 18 decimals
+
+        //true = adjust total supply to match
+        // false = just give tokens without touching total supply
 
         uint256 balAfter = dai.balanceOf(alice);
         console.log("balance after", balAfter / 1e18);
